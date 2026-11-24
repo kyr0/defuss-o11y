@@ -1,0 +1,70 @@
+{
+  "name": "defuss-o11y",
+  "version": "0.3.0",
+  "description": "Service health probes, async metric observers and OpenTelemetry export for Node.js and Bun",
+  "author": "Aron Homberg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyr0/defuss-o11y.git"
+  },
+  "keywords": [
+    "opentelemetry",
+    "prometheus",
+    "metrics",
+    "health-check",
+    "observability",
+    "bun",
+    "express"
+  ],
+  "type": "module",
+  "packageManager": "bun@1.4.5",
+  "workspaces": [
+    "benchmarks",
+    "examples/backplane",
+    "examples/serve"
+  ],
+  "engines": {
+    "node": ">=22.15.0",
+    "bun": ">=1.4.5"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "ARCH.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "pkgroll --sourcemap",
+    "lint": "oxlint --deny-warnings src test examples scripts && tsc -p tsconfig.check.json",
+    "test": "node --test test/*.test.mjs",
+    "prepack": "bun run build"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "1.10.0",
+    "@opentelemetry/core": "3.1.1",
+    "@opentelemetry/exporter-metrics-otlp-http": "0.301.2",
+    "@opentelemetry/exporter-prometheus": "0.301.2",
+    "@opentelemetry/otlp-exporter-base": "0.301.2",
+    "@opentelemetry/otlp-transformer": "0.301.2",
+    "@opentelemetry/resources": "3.1.1",
+    "@opentelemetry/sdk-metrics": "3.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.19.2",
+    "c8": "12.0.0",
+    "express": "^5.1.0",
+    "oxlint": "^1.0.0",
+    "pkgroll": "^2.27.0",
+    "typescript": "5.9.3"
+  }
+}

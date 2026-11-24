@@ -1,0 +1,16 @@
+{
+  "name": "defuss-o11y-release-comparison",
+  "description": "Release comparison harness for defuss-o11y 0.2.0 and 0.3.0 recording and scrape costs",
+  "author": "Aron Homberg",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.5",
+  "dependencies": {
+    "defuss-o11y": "workspace:*",
+    "o11y-baseline": "file:vendor/defuss-o11y-0.2.0.tgz"
+  },
+  "devDependencies": {
+    "oxlint": "1.94.0"
+  }
+}

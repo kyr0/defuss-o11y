@@ -1,0 +1,20 @@
+{
+  "name": "defuss-o11y-serve-example",
+  "description": "Example defuss-serve host that mounts the defuss-o11y routes beside static files",
+  "author": "Aron Homberg",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.5",
+  "engines": {
+    "node": ">=22.16.0",
+    "bun": ">=1.4.5"
+  },
+  "dependencies": {
+    "defuss-serve": "0.3.0",
+    "defuss-o11y": "workspace:*"
+  },
+  "devDependencies": {
+    "oxlint": "1.94.0"
+  }
+}
